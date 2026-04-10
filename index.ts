@@ -50,8 +50,6 @@ app.listen(port, ()=> {console.log(`Server is running on port ${port}`)})
 
 
 
-
-
 /*interface Transaction {
     type: "income" | "expense",
     amount: number,

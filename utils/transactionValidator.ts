@@ -1,6 +1,6 @@
 const { z } = require("zod");
-const testResult = z.number().positive()
-console.log(testResult)
+
+
 const transactionSchema = z.object({
     type: z.enum(["income", "expense"]),
     amount: z.number().positive(),
