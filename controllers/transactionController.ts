@@ -7,8 +7,10 @@ export function getTransactions(req: any, res: any) {
     res.json({sucess:true, data: transactions})
 }
 
+
 export function createTransaction(r: any, rs: any){
-  const results = validateTransaction(rs.body);
+    const results = validateTransaction(r.body);
+   
 
    if(!results.success){
     rs.status(400).json({success: false, errors: results.error.errors})
@@ -17,6 +19,7 @@ export function createTransaction(r: any, rs: any){
 
     const transaction = addTransaction(results.data)
         rs.status(201).json({sucess: true, data: transaction})
+        
     }
-
+    addTransaction()
     module.exports = { getTransactions, createTransaction}
