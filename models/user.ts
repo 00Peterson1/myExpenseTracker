@@ -1,3 +1,4 @@
+//interface is used on Objects only
 export interface User {
     id: number,
     email: string,
