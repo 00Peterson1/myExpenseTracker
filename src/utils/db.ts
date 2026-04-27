@@ -1,4 +1,3 @@
-import { hostname } from "node:os";
 
 
 const { Pool } = require("pg");
@@ -7,7 +6,7 @@ const pool = new Pool(
  {
     user: "postgres",
     host: "localhost",
-    database : "finance_tracker",
+    database : "myexpensestracker",
     password : "2004",
     port: 5432
  }

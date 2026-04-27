@@ -1,11 +1,12 @@
 const express = require("express");
 const transactionRoutes = require("./routes/transactions")
+const authRoutes = require("./routes/auth")
 
 const app = express();
 const port = 3000;
 
 app.use(express.json())
-
+app.use("/api/auth", authRoutes)
 app.use("/api/transactions", transactionRoutes)
 
 
