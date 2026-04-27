@@ -7,7 +7,7 @@ const pool = new Pool(
     user: "postgres",
     host: "localhost",
     database : "myexpensestracker",
-    password : "2004",
+    password : process.env.DATABASE_PASSWORD,
     port: 5432
  }
 )

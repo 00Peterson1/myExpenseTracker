@@ -3,7 +3,7 @@ import { success } from "zod";
 const { createUser, findUserByEmail, verifyPassword } = require("../services/UserService");
 
 const jwt = require("jsonwebtoken");
-const JWT_SECRET = "petersonlabs_portfolio";
+const JWT_SECRET = process.env.JWT_SECRET;
 
 async function register( req: any, res:any ){
     try {
