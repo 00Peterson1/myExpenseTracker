@@ -1,10 +1,12 @@
-require('dotenv').config();
+if (process.env.NODE_ENV !== "production"){
+    require("dotenv").config()
+}
 const express = require("express");
 const transactionRoutes = require("./routes/transactions")
 const authRoutes = require("./routes/auth")
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json())
 app.use("/api/auth", authRoutes)
@@ -16,7 +18,7 @@ app.get("/", (req: any, res: any) =>
     res.json({message: 'Finance Tracker API is running'})
 });
 
-app.listen(port, ()=> {console.log(`Server is running on port ${port}`)})
+app.listen(PORT, ()=> {console.log(`Server is running on port ${PORT}`)})
 
 
 
