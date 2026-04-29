@@ -1,10 +1,15 @@
+import { checkServerIdentity } from "node:tls";
 
 
 const { Pool } = require("pg");
 
 const pool = new Pool(
  {
-   connectionString: process.env.DATABASE_URL, ssl: {rejectUnathorized: false}
+   connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnathorized: false,
+      checkServerIdentity: () => undefined
+        }
  }
 )
 
