@@ -167,7 +167,7 @@ MyExpenseTracker API is a backend API that allow users to securely track their f
 
 This API is deployed on Railway with a managed PostgreSQL database.
 
-Live URL: https://myexpensetracker-production-9cd7.up.railway.app
+Live URL: https://finance.petersonlabs.dev
 
 
 ## Author
