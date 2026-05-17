@@ -1,4 +1,7 @@
+// HTTP module is a node module solution for creating http servers and clients.
+// It is a built-in module that provides an easy way to create a web server and handle HTTP requests and responses.
 const http = require("node:http");
+console.log(http)
 
 const port = 4000;
 
