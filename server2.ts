@@ -6,7 +6,7 @@ const port = 4000;
 
 http.createServer((req:any, res:any) =>{
    
-if(req.url === "/about"){
+if(req.method === "GET" && req.url === "/about"){
     res.writeHead(200, {
         "content-length": 300,
         "content-type": "text/html"
@@ -21,6 +21,8 @@ else if(req.method === "GET" && req.url === "/"){
     }),
     res.write("<h1>Contact me on my email: hello@petersonlabs.dev</h1>");
     res.end();
-}}).listen(port, () => {
+}
+
+}).listen(port, () => {
     console.log(`Server is running on port ${port}`);
 })
