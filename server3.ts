@@ -1,4 +1,5 @@
 const http = require("node:http");
+const https = require("node:https");
 
 const port = 6000;
 
@@ -24,3 +25,6 @@ else if(req.method === "GET" && req.url === "/"){
 }).listen(port, () => {
     console.log(`Server is running on port ${port}`);
 })
+
+function getCalled(){
+ }
