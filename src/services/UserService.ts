@@ -1,6 +1,8 @@
 const pool = require("../utils/db");
 const bcrypt = require("bcrypt");
 
+
+//A function that creates a user and adds to the DB
 async function createUser( email: string, password: string) {
     const hashedPassword = await bcrypt.hash(password, 10);
 
