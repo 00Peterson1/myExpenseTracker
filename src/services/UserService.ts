@@ -13,6 +13,7 @@ async function createUser( email: string, password: string) {
     return result.rows[0]
 }
 
+//Finds the created users from the DB
 async function findUserByEmail( email: string) {
     const result = await pool.query (
         "SELECT * FROM users WHERE email = $1", [email]
