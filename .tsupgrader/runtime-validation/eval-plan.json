@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-08-13T13:43:29Z",
+  "generatedOnPlatform": "linux",
+  "projectType": "server",
+  "setup": [
+    {
+      "command": "npm",
+      "args": ["install"]
+    }
+  ],
+  "assertions": [
+    {
+      "name": "tsc-no-emit",
+      "kind": "process",
+      "command": "npx",
+      "args": ["tsc", "--noEmit"],
+      "verificationMethod": "exit-code",
+      "expected": "0",
+      "timeoutSeconds": 180
+    },
+    {
+      "name": "tests-pass",
+      "kind": "process",
+      "command": "npm",
+      "args": ["test"],
+      "verificationMethod": "test-results",
+      "expected": "0",
+      "timeoutSeconds": 300
+    },
+    {
+      "name": "server-root-200",
+      "kind": "http-probe",
+      "startCommand": "npm",
+      "startArgs": ["run", "start"],
+      "url": "http://localhost:3000/",
+      "verificationMethod": "http-status",
+      "expected": "200",
+      "timeoutSeconds": 60
+    },
+    {
+      "name": "transactions-unauthorized-401",
+      "kind": "http-probe",
+      "startCommand": "npm",
+      "startArgs": ["run", "start"],
+      "url": "http://localhost:3000/api/transactions",
+      "verificationMethod": "http-status",
+      "expected": "401",
+      "timeoutSeconds": 60
+    }
+  ]
+}

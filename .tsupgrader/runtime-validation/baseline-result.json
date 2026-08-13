@@ -1,0 +1,71 @@
+{
+  "planHash": "16d2b299300173311d81042110cfc1c5b9ed246316d2bfbb756218ecc807fa20",
+  "phase": "baseline",
+  "recordedAtUtc": "2026-08-13T10:49:09.4221659Z",
+  "retryCount": 0,
+  "resetBaseline": false,
+  "result": {
+    "setupSucceeded": true,
+    "setupDurationMs": 1686,
+    "setupFailureOutput": null,
+    "assertions": [
+      {
+        "name": "tsc-no-emit",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "",
+        "durationMs": 2700
+      },
+      {
+        "name": "tests-pass",
+        "kind": "process",
+        "verificationMethod": "test-results",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\n\u003E myexpensetracker@1.0.0 test\n\u003E vitest run\n\n\n RUN  v3.2.7 /home/p3terson/Desktop/myExpenseTracker/myExpenseTracker\n\n \u2713 src/server.spec.ts (1 test) 3094ms\n   \u2713 server runtime behavior \u003E serves the root response and rejects unauthenticated transactions requests  3092ms\n\n Test Files  1 passed (1)\n      Tests  1 passed (1)\n   Start at  13:49:04\n   Duration  3.66s (transform 73ms, setup 0ms, collect 49ms, tests 3.09s, environment 0ms, prepare 123ms)\n\n",
+        "durationMs": 4684,
+        "testResults": {
+          "testFramework": "vitest",
+          "runnerDetectedFrom": "package_json",
+          "testsTotal": 1,
+          "testsPassed": 1,
+          "testsFailed": 0,
+          "testsSkipped": 0,
+          "parseFailed": false
+        }
+      },
+      {
+        "name": "server-root-200",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 200\n{\u0022message\u0022:\u0022Finance Tracker API is running\u0022}",
+        "durationMs": 36
+      },
+      {
+        "name": "transactions-unauthorized-401",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 401\n{\u0022success\u0022:false,\u0022message\u0022:\u0022No token provided\u0022}",
+        "durationMs": 4
+      }
+    ]
+  }
+}

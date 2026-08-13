@@ -1,0 +1,71 @@
+{
+  "planHash": "16d2b299300173311d81042110cfc1c5b9ed246316d2bfbb756218ecc807fa20",
+  "phase": "postupgrade",
+  "recordedAtUtc": "2026-08-13T10:51:13.6248910Z",
+  "retryCount": 4,
+  "resetBaseline": false,
+  "result": {
+    "setupSucceeded": true,
+    "setupDurationMs": 1887,
+    "setupFailureOutput": null,
+    "assertions": [
+      {
+        "name": "tsc-no-emit",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "",
+        "durationMs": 665
+      },
+      {
+        "name": "tests-pass",
+        "kind": "process",
+        "verificationMethod": "test-results",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 1,
+        "outputSample": "\n\u003E myexpensetracker@1.0.0 test\n\u003E vitest run\n\n\n RUN  v3.2.7 /home/p3terson/Desktop/myExpenseTracker/myExpenseTracker\n\n \u2713 src/server.spec.ts (1 test) 51ms\n\n\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF Failed Suites 1 \u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\n\n FAIL  src/server.spec.js [ src/server.spec.js ]\nError: Vitest cannot be imported in a CommonJS module using require(). Please use \u0022import\u0022 instead.\n\nIf you are using \u0022import\u0022 in your source code, then it\u0027s possible it was bundled into require() automatically by your bundler. In that case, do not bundle CommonJS output since it will never work with Vitest, or use dynamic import() which is available in all CommonJS modules.\n \u276F Object.\u003Canonymous\u003E node_modules/vitest/index.cjs:1:7\n \u276F src/server.spec.ts:1:1\n      1| import { describe, expect, it } from \u0027vitest\u0027;\n       | ^\n      2| import { spawn } from \u0027node:child_process\u0027;\n      3| \n\n\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF[1/1]\u23AF\n\n\n Test Files  1 failed | 1 passed (2)\n      Tests  1 passed (1)\n   Start at  13:51:12\n   Duration  605ms (transform 88ms, setup 0ms, collect 52ms, tests 51ms, environment 1ms, prepare 266ms)\n\n",
+        "durationMs": 1465,
+        "testResults": {
+          "testFramework": "vitest",
+          "runnerDetectedFrom": "package_json",
+          "testsTotal": 1,
+          "testsPassed": 1,
+          "testsFailed": 0,
+          "testsSkipped": 0,
+          "parseFailed": false
+        }
+      },
+      {
+        "name": "server-root-200",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 200\n{\u0022message\u0022:\u0022Finance Tracker API is running\u0022}",
+        "durationMs": 3
+      },
+      {
+        "name": "transactions-unauthorized-401",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 401\n{\u0022success\u0022:false,\u0022message\u0022:\u0022No token provided\u0022}",
+        "durationMs": 3
+      }
+    ]
+  }
+}
